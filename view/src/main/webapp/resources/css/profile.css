@@ -1,0 +1,27 @@
+#navigation{
+    float: left;
+    text-indent: 20px;
+    margin: 15px;
+}
+
+nav {
+    display: block;
+    width: 100%;
+}
+
+
+li {
+    display: inline;
+}
+
+ a {
+     margin-left: 4em;
+     padding: 0.4em;
+     background: rgba(176,224,230,0.3);
+     border-right: darkblue;
+     color: darkblue;
+}
+
+a:hover{
+    background: powderblue;
+}

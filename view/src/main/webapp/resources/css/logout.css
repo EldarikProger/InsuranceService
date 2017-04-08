@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+
+    height: 100%;
+    background-color: lightgray;
+    color: #333;
+    font-family: "SEGOE PRINT",sans-serif;
+    font-size: 1em;
+    line-height: 135%;
+}
+
+header{
+    width: 100%;
+    padding: 1%;
+    background-color: darkblue;
+    float: left;
+    margin-bottom: 5em;
+}
+
+header #logo{
+    width: 300px;
+    height: 130px;
+    /*background-image: url(logo3.png);*/
+    float: left;
+}
+
+header #logname{
+    padding: 4%;
+    width: 65%;
+    color: lightgray;
+    float: left;
+    font-size: 40px;
+    font-family: "SEGOE PRINT",sans-serif;
+}
+
+#description{
+    text-align: center;
+    color: darkblue;
+    font-size: 30px;
+}
+
+#instruc{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 2.5em;
+    margin-bottom: 2em;
+}
+
+#userdata{
+    text-align: center;
+    font-size: 16px;
+    margin-top:0.3em;
+}
+
+#userdata input{
+    text-align: center;
+    font-size: 18px;
+    font-family: inherit;
+    color: darkblue;
+    width: 250px;
+    height: 30px;
+    border-radius: 7px;
+}
+
+#userdata #button{
+    margin-top: 3em;
+    text-align: center;
+    font-size: 18px;
+    font-family: inherit;
+    background-color: powderblue;
+    color: darkblue;
+    width: 250px;
+    height: 35px;
+    border-radius: 7px;
+}

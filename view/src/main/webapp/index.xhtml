@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+
+<h:head>
+    <title>СервиСтраховок ОСАГО/КАСКО</title>
+    <h:outputStylesheet library="css" name="index.css"/>
+</h:head>
+
+<h:body>
+    <header>
+        <h:graphicImage id="logo" value="resources/css/logo3.png"></h:graphicImage>
+        <div id="logname">
+            Сервис Страховок ОСАГО / КАСКО
+        </div>
+    </header>
+
+    <div id="description">
+        <p>
+            Данный сервис позволяет быстро оформить страховку ОСАГО/КАСКО сотрудникам страховой компании.
+        </p>
+        <p>
+            Работа с сервисом крайне проста и удобна что позволяет увеличить работоспособность сотрудников.
+        </p>
+    </div>
+
+
+    <div id="login">
+        <div>
+            Log In
+        </div>
+        <h:form>
+            <p id="textbox">
+                <h:inputText name="textLogIn" a:placeholder="log in"></h:inputText>
+            </p>
+            <p id="textbox">
+                <h:inputSecret name="password" a:placeholder="password"></h:inputSecret>
+            </p>
+            <p id="button">
+                <h:commandButton name="button" value="Log in"></h:commandButton>
+            </p>
+            <p id="button">
+                <h:commandButton name="button" value="Log out"></h:commandButton>
+            </p>
+        </h:form>
+    </div>
+
+    <div id="">
+        <p>
+        </p>
+    </div>
+
+</h:body>
+
+
+</html>
