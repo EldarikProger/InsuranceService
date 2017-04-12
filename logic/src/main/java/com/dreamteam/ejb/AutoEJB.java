@@ -1,6 +1,7 @@
 package com.dreamteam.ejb;
 
-import com.dreamteam.domain.Admin;
+
+import com.dreamteam.domain.Auto;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,19 +10,17 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
-public class AdminEJB {
+public class AutoEJB {
 
     @PersistenceContext(unitName = "postgresPU")
     private EntityManager entityManager;
 
-
-    public List getAllAdmins(){
-        Query query = entityManager.createQuery("select a from Admin a");
+    public List getAllAuto(){
+        Query query = entityManager.createQuery("select en from Auto en");
         return query.getResultList();
     }
 
-    public void createAdmin(Admin admin){
-        entityManager.persist(admin);
+    public void createAdmin(Auto auto){
+        entityManager.persist(auto);
     }
-
 }

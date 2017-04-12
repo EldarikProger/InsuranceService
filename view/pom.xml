@@ -31,6 +31,12 @@
             <artifactId>jsf-api</artifactId>
             <version>2.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.dreamteam</groupId>
+            <artifactId>logic</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -20,8 +20,7 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private List<Insurance> insuranceList;
 
-    public Client(long id, String fName, String sName, String mName, Date bDay) {
-        this.id = id;
+    public Client(String fName, String sName, String mName, Date bDay) {
         this.fName = fName;
         this.sName = sName;
         this.mName = mName;

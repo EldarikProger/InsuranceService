@@ -37,16 +37,16 @@
         </div>
         <h:form>
             <p id="textbox">
-                <h:inputText name="textLogIn" a:placeholder="log in"></h:inputText>
+                <h:inputText name="textLogIn" value="#{authorizeBean.login}" a:placeholder="log in"/>
             </p>
             <p id="textbox">
-                <h:inputSecret name="password" a:placeholder="password"></h:inputSecret>
+                <h:inputSecret name="password" value="#{authorizeBean.password}" a:placeholder="password"/>
             </p>
             <p id="button">
-                <h:commandButton name="button" value="Log in"></h:commandButton>
+                <h:commandButton name="button" action="#{authorizeBean.doAuthorize()}" value="Log in"/>
             </p>
             <p id="button">
-                <h:commandButton name="button" value="Log out"></h:commandButton>
+                <h:commandButton name="button" action="logout.xhtml" value="Log out"/>
             </p>
         </h:form>
     </div>
