@@ -5,14 +5,13 @@ import com.dreamteam.domain.Insurer;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
 
-@ManagedBean
+@Named
 @SessionScoped
 public class AuthorizeBean implements Serializable{
 
