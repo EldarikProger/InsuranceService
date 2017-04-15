@@ -25,44 +25,84 @@
         <p id="des">
             Регистрация сотрудников страховой компаниии.
         </p>
-        <div>
-            <p id="instruc">
+        <h:form>
+            <div>
+                <p id="instruc">
 
-            </p>
-            <p id="userdata">
-                Имя:
-            </p>
-            <p id="userdata">
-                <h:inputText name="boxname" a:placeholder="Василий"></h:inputText>
-            </p>
-            <p id="userdata">
-                Фамилия:
-            </p>
-            <p id="userdata">
-                <h:inputText name="boxsecondfamily" a:placeholder="Иванов"></h:inputText>
-            </p>
-            <p id="userdata">
-                Логин:
-            </p>
-            <p id="userdata">
-                <h:inputText name="boxsecondfamily" placeholder="User"></h:inputText>
-            </p>
-            <p id="userdata">
-                Пароль:
-            </p>
-            <p id="userdata">
-                <h:inputSecret name="boxsecondfamily" placeholder="Пароль"></h:inputSecret>
-            </p>
-            <p id="userdata">
-                Повторите пароль:
-            </p>
-            <p id="userdata">
-                <h:inputSecret name="boxsecondfamily" placeholder="Пароль"></h:inputSecret>
-            </p>
-            <p id="userdata">
-                <h:commandButton id="button" name="buttonLogOut" value="Зарегистрировать"></h:commandButton>
-            </p>
-        </div>
+                </p>
+                <p id="userdata">
+                    Имя:
+                </p>
+                <p id="userdata">
+                    <h:inputText name="name" a:placeholder="Василий" value="#{logOutBean.sname}"/>
+                </p>
+                <p id="userdata">
+                    Фамилия:
+                </p>
+                <p id="userdata">
+                    <h:inputText name="fname" a:placeholder="Иванов" value="#{logOutBean.fname}"/>
+                </p>
+                <p id="userdata">
+                    Отчество:
+                </p>
+                <p id="userdata">
+                    <h:inputText name="mname" a:placeholder="Иванов" value="#{logOutBean.mname}"/>
+                </p>
+                <p id="userdata">
+                    Логин:
+                </p>
+                <p id="userdata">
+                    <h:inputText name="login" placeholder="User" value="#{logOutBean.login}"/>
+                </p>
+                <p id="userdata">
+                    Пароль:
+                </p>
+                <p id="userdata">
+                    <h:inputSecret name="pas1" placeholder="Пароль" value="#{logOutBean.password1}"/>
+                </p>
+                <p id="userdata">
+                    Повторите пароль:
+                </p>
+                <p id="userdata">
+                    <h:inputSecret name="pas2" placeholder="Пароль" value="#{logOutBean.password2}"/>
+                </p>
+                <p id="userdata">
+                    <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
+                                     value="Зарегистрировать" onclick="return E()" action="#{logOutBean.doLogOut()}"/>
+                </p>
+            </div>
+        </h:form>
+
+
+        <script type="text/javascript">
+            function validateForm() {
+                var TBname = document.getElementsByName("name")[0].value;
+                var TBfname = document.getElementsByName("fname")[0].value;
+                var TBsname = document.getElementsByName("sname")[0].value;
+                var TBlogin = document.getElementsByName("login"[0].value);
+                var TBpas1 = document.getElementsByName("pas1")[0].value;
+                var TBpas2 = document.getElementsByName("pas2")[0].value;
+                if (TBname === null || TBname === "" || TBsname === null || TBsname === "" || TBpas1 === null || TBpas1 === ""
+                    || TBfname === null || Tfname === "" || TBlogin === null || TBlogin === "" || TBpas2 === null || TBpas2 === "") {
+                    alert("Параметры должны быть введены!");
+                    return false;
+                }
+                if(TBpas2 !== TBpas1){
+                    alert("Пароли не совпадают!");
+                    return false;
+                }
+                else return true;
+            }
+
+            /**
+             * @return {boolean}
+             */
+            function E() {
+                alert("fsdfs fнеsfsd!");
+                return false;
+            }
+        </script>
+
     </div>
 </h:body>
 

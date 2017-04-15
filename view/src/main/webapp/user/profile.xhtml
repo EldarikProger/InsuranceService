@@ -15,8 +15,10 @@
 </h:head>
 
 <h:body>
+    <f:event type="preRenderComponent"
+             listener="#{userDataBean.updateData()}" />
     <header>
-        <h:graphicImage id="logo" value="/resources/css/logo3.png" />
+        <h:graphicImage id="logo" value="/resources/css/logo3.png"/>
         <div id="logname">
             Сервис Страховок ОСАГО / КАСКО
         </div>
@@ -25,13 +27,35 @@
     <div id="navigation">
         <nav>
             <ul>
-                <li><a href="#">Мой профиль</a></li>
-                <li><a href="#">Затраховать новых клиентов</a></li>
-                <li><a href="#">Затраховать старых клиентов</a></li>
-                <li><a href="#">Недооформленная страховка</a></li>
-                <li><a href="#">Выход</a></li>
+                <li><h:link value="Мой профиль" outcome="/user/profile.xhtml"/></li>
+                <li><h:link value="Затраховать новых клиентов" outcome=""/></li>
+                <li><h:link value="Затраховать старых клиентов" outcome=""/></li>
+                <li><h:link value="Недооформленная страховка" outcome=""/></li>
+                <li><h:link value="Выход" outcome=""/></li>
             </ul>
         </nav>
+    </div>
+
+
+    <div id="userd">
+        <p>
+            <h:outputText>Фамилия:  #{userDataBean.userData.fname} </h:outputText>
+        </p>
+        <p>
+            <h:outputText>Имя:  #{userDataBean.userData.sname} </h:outputText>
+        </p>
+        <p>
+            <h:outputText>Отчество:  #{userDataBean.userData.mname} </h:outputText>
+        </p>
+        <p>
+            <h:outputText>Количество оформленных страховок:  #{userDataBean.userData.countIssued} </h:outputText>
+        </p>
+        <p>
+            <h:outputText>Количество недооформленных страховок:  #{userDataBean.userData.countUnIssued} </h:outputText>
+        </p>
+        <p>
+            <h:outputText>Общее количество страховок:  #{userDataBean.userData.count} </h:outputText>
+        </p>
     </div>
 
     <div class="myprofile">

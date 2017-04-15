@@ -28,8 +28,25 @@ public class Insurance {
     private String getPerson2Prava;
     private String person3Name;
     private String getPerson3Prava;
+    private Boolean check;
     @OneToOne
     private Price price;
+
+    public Boolean getCheck() {
+        return check;
+    }
+
+    public void setCheck(Boolean check) {
+        this.check = check;
+    }
+
+    public Price getPrice() {
+        return price;
+    }
+
+    public void setPrice(Price price) {
+        this.price = price;
+    }
 
     public long getId() {
         return id;

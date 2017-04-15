@@ -22,7 +22,7 @@ public class AuthorizeBean implements Serializable{
     private Admin admin;
 
     @EJB
-    private AuthorizeEJB authorizeManager;
+    private AuthorizeManager authorizeManager;
 
     public String getLogin() {
         return login;
@@ -84,6 +84,5 @@ public class AuthorizeBean implements Serializable{
                 e.printStackTrace();
             }
         }
-        return;
     }
 }

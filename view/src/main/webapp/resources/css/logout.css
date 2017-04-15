@@ -64,16 +64,29 @@ header #logname{
 }
 
 #userdata input{
+     text-align: center;
+     font-size: 18px;
+     font-family: inherit;
+     color: darkblue;
+    background-color: powderblue;
+    width: 250px;
+     height: 30px;
+     border-radius: 7px;
+ }
+
+.userdatabut{
+    margin-top: 3em;
     text-align: center;
     font-size: 18px;
     font-family: inherit;
+    background-color: powderblue;
     color: darkblue;
     width: 250px;
-    height: 30px;
+    height: 35px;
     border-radius: 7px;
 }
 
-#userdata #button{
+#button input{
     margin-top: 3em;
     text-align: center;
     font-size: 18px;

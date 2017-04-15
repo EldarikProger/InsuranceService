@@ -29,6 +29,14 @@ public class Insurer {
         this.password = password;
     }
 
+    public Insurer(String fName, String sName, String mName, String login, String password) {
+        this.fName = fName;
+        this.sName = sName;
+        this.mName = mName;
+        this.login = login;
+        this.password = password;
+    }
+
     public Insurer() {
 
     }

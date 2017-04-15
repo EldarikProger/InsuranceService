@@ -1,7 +1,6 @@
 package com.dreamteam.controllers;
 
 import com.dreamteam.domain.Client;
-import com.dreamteam.ejb.ClientEJB;
 import com.dreamteam.models.OrderData;
 import org.apache.commons.lang3.StringUtils;
 
