@@ -1,12 +1,13 @@
 package com.dreamteam.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Price by all insurance
  */
 @Entity
-public class Price {
+public class Price implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,5 +56,14 @@ public class Price {
 
     public void setInsurance(Insurance insurance) {
         this.insurance = insurance;
+    }
+
+    public Price() {
+    }
+
+    public Price(double price, double priceRatio, double money) {
+        this.price = price;
+        this.priceRatio = priceRatio;
+        this.money = money;
     }
 }

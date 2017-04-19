@@ -37,47 +37,48 @@
     <br/>
     <br/>
 
-    <div id="userd">
-        <h:form>
-            <p id="instruc">
+    <div id="description">
+        Данные по профилю:
 
-            </p>
-            <p>
+
+        <h:form>
+            <div id="description">
+
+            </div>
+            <p id="userdata">
                 <h:outputText value="Фамилия:  #{adminBean.authorizeBean.admin.fName}"/>
             </p>
-            <p>
+            <p id="userdata">
                 <h:outputText value="Имя:  #{adminBean.authorizeBean.admin.sName}"/>
             </p>
-            <p>
+            <p id="userdata">
                 <h:outputText value="Отчество:  #{adminBean.authorizeBean.admin.mName}"/>
             </p>
 
-            <p id="instruc">
-
-            </p>
-            <p id="instruc">
-
-            </p>
 
             <p id="userdata">
                 Данные по страховкам
             </p>
             <p id="userdata">
-                <h:selectOneMenu value="#{userData.data}">
+                <h:selectOneMenu value="#{adminBean.value}" id="scroll">
                     <f:selectItem itemValue="1" itemLabel="По страховщику"/>
                     <f:selectItem itemValue="2" itemLabel="По клиенту"/>
-                    <f:selectItem itemValue="2" itemLabel="Все страховки"/>
-                    <f:selectItem itemValue="2" itemLabel="Только каско"/>
-                    <f:selectItem itemValue="2" itemLabel="Только осаго"/>
+                    <f:selectItem itemValue="3" itemLabel="Все страховки"/>
+                    <f:selectItem itemValue="4" itemLabel="Только каско"/>
+                    <f:selectItem itemValue="5" itemLabel="Только осаго"/>
                 </h:selectOneMenu>
             </p>
             <p id="userdata">
-                <h:inputText id="name" a:placeholder="" value="#{adminBean.value}"/>
+                <h:inputText id="name" a:placeholder="" value="#{adminBean.str}"/>
+            </p>
+
+            <p id="userdata">
+                <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
+                                 value="Посмотреть статистику" action="#{adminBean.getStatistics()}"/>
             </p>
         </h:form>
-    </div>
 
-    <div class="myprofile">
+
     </div>
 </h:body>
 

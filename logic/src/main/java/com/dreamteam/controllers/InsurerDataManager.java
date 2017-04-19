@@ -19,6 +19,11 @@ public class InsurerDataManager {
     @PersistenceContext(unitName = "postgresPU")
     private EntityManager entityManager;
 
+    /**
+     * Получение данных о пользователе(страховщике)
+     * @param insurer
+     * @return
+     */
     public UserData getInsurerData(Insurer insurer) {
         Query query = entityManager.createQuery("select a from Insurance a where a.insurer = :ins");
         query.setParameter("ins", insurer);

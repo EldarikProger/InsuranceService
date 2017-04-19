@@ -35,147 +35,159 @@
         </nav>
     </div>
 
-    <h:form>
-        <div>
-            <p id="instruc">
+    <div id="description">
+        Заполните данные по страховке:
 
-            </p>
-            <p id="userdata">
-                Имя:
-            </p>
-            <p id="userdata">
-                <h:inputText id="name" a:placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Фамилия:
-            </p>
-            <p id="userdata">
-                <h:inputText id="fname" a:placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Отчество:
-            </p>
-            <p id="userdata">
-                <h:inputText id="mname" a:placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Дата рождения(Y,M,D):
-            </p>
-            <p id="userdata">
-                <h:inputText id="y" placeholder="year" value=""/>
-                <h:inputText id="m" placeholder="mounth" value=""/>
-                <h:inputText id="d" placeholder="day" value=""/>
-            </p>
-            <p id="userdata">
-                Марка авто:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Модель авто:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car2" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Мощность авто:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car3" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Год выпуска авто:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car4" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Номер авто:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car5" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                ВИН авто:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car6" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Номер ПТС:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car7" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Серия ПТС:
-            </p>
-            <p id="userdata">
-                <h:inputText id="car8" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Права:
-            </p>
-            <p id="userdata">
-                <h:inputText id="prava" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                ФИО 2 человека:
-            </p>
-            <p id="userdata">
-                <h:inputText id="fio2" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Права 2 человека:
-            </p>
-            <p id="userdata">
-                <h:inputText id="prava2" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                ФИО 3 человека:
-            </p>
-            <p id="userdata">
-                <h:inputText id="fio3" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Права 3 человека:
-            </p>
-            <p id="userdata">
-                <h:inputText id="prava3" placeholder="" value=""/>
-            </p>
-            <p id="userdata">
-                Дата начала действия страховки(Y,M,D):
-            </p>
-            <p id="userdata">
-                <h:inputText id="year" placeholder="year" value=""/>
-                <h:inputText id="mounth" placeholder="mounth" value=""/>
-                <h:inputText id="day" placeholder="day" value=""/>
-            </p>
-            <p id="userdata">
-                Дата конца действия страховки(Y,M,D):
-            </p>
-            <p id="userdata">
-                <h:inputText id="year2" placeholder="year" value=""/>
-                <h:inputText id="mounth2" placeholder="mounth" value=""/>
-                <h:inputText id="day2" placeholder="day" value=""/>
-            </p>
-            <p id="userdata">
-                <h:selectOneMenu value="#{userData.data}">
-                    <f:selectItem itemValue="1" itemLabel="ОСАГО"/>
-                    <f:selectItem itemValue="2" itemLabel="КАСКО"/>
-                </h:selectOneMenu>
-            </p>
-            <h:selectBooleanCheckbox title="Страховка оформлена" value="true"/>
-
-
-            <p id="userdata">
-                <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
-                                 value="Зарегистрировать" onclick="return validateForm()"
-                                 action="#" type="submit"/>
-            </p>
-        </div>
-    </h:form>
+        <br/>
+        <br/>
+        <h:form>
+            <div>
+                <p id="userdata">
+                    ФИО Страховщика:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="ffname" a:placeholder="" value="#{insuranceBean.fn}"/>
+                    <h:inputText id="ssname" a:placeholder="" value="#{insuranceBean.sn}"/>
+                    <h:inputText id="mmname" a:placeholder="" value="#{insuranceBean.mn}"/>
+                </p>
+                <p id="userdata">
+                    Имя:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="name" a:placeholder="" value="#{insuranceBean.sname}"/>
+                </p>
+                <p id="userdata">
+                    Фамилия:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="fname" a:placeholder="" value="#{insuranceBean.fname}"/>
+                </p>
+                <p id="userdata">
+                    Отчество:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="mname" a:placeholder="" value="#{insuranceBean.mname}"/>
+                </p>
+                <p id="userdata">
+                    Дата рождения(Y,M,D):
+                </p>
+                <p id="userdata">
+                    <h:inputText id="y" placeholder="year" value="#{insuranceBean.bDayy}"/>
+                    <h:inputText id="m" placeholder="mounth" value="#{insuranceBean.bDaym}"/>
+                    <h:inputText id="d" placeholder="day" value="#{insuranceBean.bDayd}"/>
+                </p>
+                <p id="userdata">
+                    Марка авто:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car" placeholder="" value="#{insuranceBean.carfName}"/>
+                </p>
+                <p id="userdata">
+                    Модель авто:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car2" placeholder="" value="#{insuranceBean.carsName}"/>
+                </p>
+                <p id="userdata">
+                    Мощность авто:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car3" placeholder="" value="#{insuranceBean.power}"/>
+                </p>
+                <p id="userdata">
+                    Год выпуска авто:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car4" placeholder="" value="#{insuranceBean.carbDay}"/>
+                </p>
+                <p id="userdata">
+                    Номер авто:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car5" placeholder="" value="#{insuranceBean.carNumber}"/>
+                </p>
+                <p id="userdata">
+                    ВИН авто:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car6" placeholder="" value="#{insuranceBean.carVin}"/>
+                </p>
+                <p id="userdata">
+                    Номер ПТС:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car7" placeholder="" value="#{insuranceBean.ptsNumber}"/>
+                </p>
+                <p id="userdata">
+                    Серия ПТС:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="car8" placeholder="" value="#{insuranceBean.ptsSeries}"/>
+                </p>
+                <p id="userdata">
+                    Права:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="prava" placeholder="" value="#{insuranceBean.getPerson1Prava}"/>
+                </p>
+                <p id="userdata">
+                    ФИО 2 человека:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="fio2" placeholder="" value="#{insuranceBean.person2Name}"/>
+                </p>
+                <p id="userdata">
+                    Права 2 человека:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="prava2" placeholder="" value="#{insuranceBean.getPerson2Prava}"/>
+                </p>
+                <p id="userdata">
+                    ФИО 3 человека:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="fio3" placeholder="" value="#{insuranceBean.person3Name}"/>
+                </p>
+                <p id="userdata">
+                    Права 3 человека:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="prava3" placeholder="" value="#{insuranceBean.getPerson3Prava}"/>
+                </p>
+                <p id="userdata">
+                    Дата начала действия страховки(Y,M,D):
+                </p>
+                <p id="userdata">
+                    <h:inputText id="year" placeholder="year" value="#{insuranceBean.beginDatey}"/>
+                    <h:inputText id="mounth" placeholder="mounth" value="#{insuranceBean.beginDatem}"/>
+                    <h:inputText id="day" placeholder="day" value="#{insuranceBean.beginDated}"/>
+                </p>
+                <p id="userdata">
+                    Дата конца действия страховки(Y,M,D):
+                </p>
+                <p id="userdata">
+                    <h:inputText id="year2" placeholder="year" value="#{insuranceBean.endDatey}"/>
+                    <h:inputText id="mounth2" placeholder="mounth" value="#{insuranceBean.endDatem}"/>
+                    <h:inputText id="day2" placeholder="day" value="#{insuranceBean.endDated}"/>
+                </p>
+                <p id="userdata">
+                    <h:selectOneMenu id="scroll" value="#{insuranceBean.type}">
+                        <f:selectItem itemValue="1" itemLabel="ОСАГО"/>
+                        <f:selectItem itemValue="2" itemLabel="КАСКО"/>
+                    </h:selectOneMenu>
+                </p>
+                <p id="userdata">
+                    Страховка оформлена <h:selectBooleanCheckbox title="Страховка оформлена"
+                                                                 value="#{insuranceBean.flag}"/>
+                </p>
+                <p id="userdata">
+                    <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
+                                     value="Зарегистрировать"
+                                     action="#{insuranceBean.doNewInsurance()}" type="submit"/>
+                </p>
+            </div>
+        </h:form>
+    </div>
 
 </h:body>
 

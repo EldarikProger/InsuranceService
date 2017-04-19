@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+    <title>Регистрация</title>
+    <h:outputStylesheet library="css" name="main.css"/>
+    <h:outputStylesheet library="css" name="profile.css"/>
+    <h:outputStylesheet library="css" name="myprofile.css"/>
+</h:head>
+
+<h:body>
+
+    <header>
+        <h:graphicImage id="logo" value="/resources/css/logo3.png"/>
+        <div id="logname">
+            Сервис Страховок ОСАГО / КАСКО
+        </div>
+    </header>
+
+    <div id="navigation">
+        <nav>
+            <ul>
+                <li><h:link value="Мой профиль" outcome="/admin/profile.xhtml"/></li>
+                <li><h:link value="Выход" outcome="/index.xhtml"/></li>
+            </ul>
+        </nav>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <div id="description">
+        Статистика:
+        <br></br>
+        <br></br>
+
+        <h:form>
+            <div id="description">
+
+            </div>
+
+            <c:forEach var="data" begin="0" end="#{adminBean.sizeList}" step="1" items="#{adminBean.list}">
+
+                <table border="5%" cellpadding="5%" bgcolor="#f0ffff">
+                    <tr>
+                        <td>Страховка</td>
+                    </tr>
+                    <tr>
+                        <td>ФИО</td>
+                        <td><h:outputText value="#{data.fname} #{data.sname} #{data.mname}"/></td>
+                    </tr>
+                    <tr>
+                        <td>Дата рождения</td>
+                        <td><h:outputText value="#{data.bDay }"/></td>
+                    </tr>
+                    <tr>
+                        <td>Дата начала и конца страховки</td>
+                        <td><h:outputText value="#{data.beginDate} - #{data.endDate} "/></td>
+                    </tr>
+                    <tr>
+                        <td>Авто</td>
+                        <td><h:outputText value="#{data.carfName} #{data.carsName} #{data.carNumber} #{data.carVin}
+                 #{data.carbDay} #{data.ptsNumber} #{data.power} #{data.ptsSeries}"/></td>
+                    </tr>
+                    <tr>
+                        <td>1 Человек</td>
+                        <td><h:outputText value="#{data.person1Name} #{data.getPerson1Prava}"/></td>
+                    </tr>
+                    <tr>
+                        <td>2 Человек</td>
+                        <td><h:outputText value="#{data.person2Name} #{data.getPerson2Prava}"/></td>
+                    </tr>
+                    <tr>
+                        <td>3 Человек</td>
+                        <td><h:outputText value="#{data.person3Name} #{data.getPerson3Prava}"/></td>
+                    </tr>
+                    <tr>
+                        <td>Тип страховки</td>
+                        <td><h:outputText value=": #{data.typeInsurance}"/>
+                        </td>
+                    </tr>
+                </table>
+
+            </c:forEach>
+
+
+            <p id="userdata">
+                <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
+                                 value="Вернуться назад" action="/admin/profile.xhtml"/>
+            </p>
+        </h:form>
+
+
+    </div>
+</h:body>
+
+</html>

@@ -1,7 +1,79 @@
 .myprofile{
     float: left;
     text-indent: 4em;
+    color: darkblue;
 }
 
 #avatar{
+}
+
+
+#description{
+    text-indent: 15em;
+    float: left;
+    margin-top: 5em;
+    text-align: center;
+    color: darkblue;
+    font-size: 16px;
+}
+
+#instruc{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 2.5em;
+    color: darkblue;
+    margin-bottom: 2em;
+}
+
+#userdata{
+    text-align: center;
+    font-size: 16px;
+    margin-top:0.3em;
+    color: darkblue;
+}
+
+#scroll select{
+    text-align: center;
+    font-size: 18px;
+    font-family: inherit;
+    color: darkblue;
+    background-color: powderblue;
+    width: 250px;
+    height: 30px;
+    border-radius: 7px;
+}
+
+#userdata input{
+    text-align: center;
+    font-size: 18px;
+    font-family: inherit;
+    color: darkblue;
+    background-color: powderblue;
+    width: 250px;
+    height: 30px;
+    border-radius: 7px;
+}
+
+.userdatabut{
+    margin-top: 3em;
+    text-align: center;
+    font-size: 18px;
+    font-family: inherit;
+    background-color: powderblue;
+    color: darkblue;
+    width: 250px;
+    height: 35px;
+    border-radius: 7px;
+}
+
+#button input{
+    margin-top: 3em;
+    text-align: center;
+    font-size: 18px;
+    font-family: inherit;
+    background-color: powderblue;
+    color: darkblue;
+    width: 250px;
+    height: 35px;
+    border-radius: 7px;
 }

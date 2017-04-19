@@ -5,22 +5,22 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-
 <h:head>
-    <title>Регистрация</title>
+    <title>Недоофрмленная страховка</title>
     <h:outputStylesheet library="css" name="main.css"/>
     <h:outputStylesheet library="css" name="profile.css"/>
     <h:outputStylesheet library="css" name="myprofile.css"/>
 </h:head>
 
 <h:body>
+
     <header>
-        <h:graphicImage id="logo" value="/resources/css/logo3.png"/>
+        <h:graphicImage id="logo" value="resources/css/logo3.png"/>
         <div id="logname">
             Сервис Страховок ОСАГО / КАСКО
         </div>
     </header>
+
 
     <div id="navigation">
         <nav>
@@ -35,31 +35,16 @@
     </div>
 
     <div id="description">
-        Данные по профилю:
-        <div id="description">
-
-        </div>
+        Страховка успешно оформлена!
+        <br/>
+        <br/>
+        <br/>
         <p id="userdata">
-            <h:outputText value="Фамилия:  #{authorizeBean.insurer.fName}" />
-        </p>
-        <p id="userdata">
-            <h:outputText value="Имя:  #{authorizeBean.insurer.sName} " />
-        </p>
-        <p id="userdata">
-            <h:outputText value="Отчество:  #{authorizeBean.insurer.mName}" />
-            <f:event type="postAddToView" listener="#{authorizeBean.updateData()}"/>
-        </p>
-        <p id="userdata">
-            <h:outputText value="Количество оформленных страховок:  #{authorizeBean.userData.countIssued} " />
-        </p>
-        <p id="userdata">
-            <h:outputText value="Количество недооформленных страховок:  #{authorizeBean.userData.countUnIssued} " />
-        </p>
-        <p id="userdata">
-            <h:outputText value="Общее количество страховок:  #{authorizeBean.userData.count} " />
+            <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
+                             value="Вернуться на главную" action="/admin/profile.xhtml"/>
         </p>
     </div>
 
-</h:body>
 
+</h:body>
 </html>

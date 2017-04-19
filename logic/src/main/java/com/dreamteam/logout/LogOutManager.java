@@ -15,6 +15,11 @@ public class LogOutManager {
     @PersistenceContext(unitName = "postgresPU")
     private EntityManager entityManager;
 
+    /**
+     * Регистрация страховщиков
+     * @param data
+     * @return
+     */
     public boolean addInsurer(InsurerData data){
         Insurer insurer = new Insurer(data.getFname(),data.getSname(),data.getMname(),data.getLogin(),data.getPassword());
         try {

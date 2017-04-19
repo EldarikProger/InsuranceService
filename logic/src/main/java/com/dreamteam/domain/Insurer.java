@@ -1,13 +1,14 @@
 package com.dreamteam.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Insurer who is the user and insure customers.
  */
 @Entity
-public class Insurer {
+public class Insurer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -88,4 +89,5 @@ public class Insurer {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

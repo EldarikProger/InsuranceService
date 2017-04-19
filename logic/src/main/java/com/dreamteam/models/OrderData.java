@@ -3,10 +3,15 @@ package com.dreamteam.models;
 
 import com.dreamteam.domain.Insurer;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class OrderData {
+/**
+ * Данные по страховке
+ */
+public class OrderData implements Serializable{
     private String fname,sname,mname;
+    private String fn,sn,mn;
     private Date bDay;
     private Insurer insurer;
     private String carfName, carsName;
@@ -25,6 +30,31 @@ public class OrderData {
     private String getPerson3Prava;
     private Date beginDate;
     private Date endDate;
+    private boolean flagg;
+
+    public String getFn() {
+        return fn;
+    }
+
+    public void setFn(String fn) {
+        this.fn = fn;
+    }
+
+    public String getSn() {
+        return sn;
+    }
+
+    public void setSn(String sn) {
+        this.sn = sn;
+    }
+
+    public String getMn() {
+        return mn;
+    }
+
+    public void setMn(String mn) {
+        this.mn = mn;
+    }
 
     public OrderData(String fname, String sname, String mname) {
         this.fname = fname;
@@ -32,10 +62,34 @@ public class OrderData {
         this.mname = mname;
     }
 
+    public void setbDay(Date bDay) {
+        this.bDay = bDay;
+    }
+
+    public void setCarbDay(Date carbDay) {
+        this.carbDay = carbDay;
+    }
+
+    public void setBeginDate(Date beginDate) {
+        this.beginDate = beginDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public boolean isFlagg() {
+        return flagg;
+    }
+
+    public void setFlagg(boolean flagg) {
+        this.flagg = flagg;
+    }
+
     public OrderData() {
     }
 
-    public OrderData(String fname, String sname, String mname, Insurer insurer, String carfName, String carsName,
+    public OrderData(String fname, String sname, String mname, String carfName, String carsName,
                      String carVin, String carNumber, String ptsSeries, String ptsNumber, int power, int typeInsurance,
                      String person1Name, String getPerson1Prava, String person2Name, String getPerson2Prava,
                      String person3Name, String getPerson3Prava) {

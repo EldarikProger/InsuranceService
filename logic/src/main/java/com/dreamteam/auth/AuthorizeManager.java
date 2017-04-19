@@ -19,6 +19,12 @@ public class AuthorizeManager {
     @PersistenceContext(unitName = "postgresPU")
     private EntityManager entityManager;
 
+    /**
+     * Авторизация Страховщиков
+     * @param login
+     * @param password
+     * @return
+     */
     public Insurer authorizeInsurer(String login, String password) {
         Query query = entityManager.createQuery("select a from Insurer a where a.login = :log and a.password = :pas");
         query.setParameter("log", login);
@@ -33,6 +39,12 @@ public class AuthorizeManager {
         return insurer;
     }
 
+    /**
+     * Авторизация Админов
+     * @param login
+     * @param password
+     * @return
+     */
     public Admin authorizeAdmin(String login, String password) {
         Query query = entityManager.createQuery("select a from Admin a where a.login = :log and a.password = :pas");
         query.setParameter("log",login);

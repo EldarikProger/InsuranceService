@@ -11,11 +11,12 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Objects;
 
 
 @Named
 @SessionScoped
-public class InsuranceBean implements Serializable{
+public class InsuranceBean implements Serializable {
 
     @Inject
     private AuthorizeBean authorizeBean;
@@ -23,8 +24,9 @@ public class InsuranceBean implements Serializable{
     private InsuranceManager insuranceManager;
     private OrderData data;
 
-    private String fname,sname,mname;
-    private int bDayy,bDaym,bDayd;
+    private String fname, sname, mname;
+    private String fn, sn, mn;
+    private int bDayy, bDaym, bDayd;
     private String carfName, carsName;
     private String carVin;
     private String carNumber;
@@ -39,15 +41,34 @@ public class InsuranceBean implements Serializable{
     private String getPerson2Prava;
     private String person3Name;
     private String getPerson3Prava;
-    private int beginDatey,beginDatem,beginDated;
-    private int endDatey,endDatem,endDated;
+    private int beginDatey, beginDatem, beginDated;
+    private int endDatey, endDatem, endDated;
+    private boolean flag;
+    private String type;
 
-    public void doNewInsurance(){
 
+    public void doNewInsurance() {
+        int ttt = 1;
+        if (Objects.equals(type, "1"))
+            ttt = 1;
+        if (Objects.equals(type, "2"))
+            ttt = 2;
+        person1Name = fname + " " + sname + " " + mname;
+        OrderData orderData = new OrderData(fname, sname, mname, carfName, carsName, carVin, carNumber, ptsSeries, ptsNumber, power, ttt,
+                person1Name, getPerson1Prava, person2Name, getPerson2Prava, person3Name, getPerson3Prava);
+        orderData.setFn(fn);
+        orderData.setMn(mn);
+        orderData.setSn(sn);
+        insuranceManager.addOrder(orderData);
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/user/finalize.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void doOldInsurance(){
-        data = new OrderData(fname,sname,mname);
+    public void doOldInsurance() {
+        data = new OrderData(fname, sname, mname);
         data = insuranceManager.getUnformedInsurance(data);
         try {
             FacesContext.getCurrentInstance().getExternalContext().redirect("/user/newinsurance.xhtml");
@@ -56,6 +77,53 @@ public class InsuranceBean implements Serializable{
         }
     }
 
+    public String getFn() {
+        return fn;
+    }
+
+    public void setFn(String fn) {
+        this.fn = fn;
+    }
+
+    public String getSn() {
+        return sn;
+    }
+
+    public void setSn(String sn) {
+        this.sn = sn;
+    }
+
+    public String getMn() {
+        return mn;
+    }
+
+    public void setMn(String mn) {
+        this.mn = mn;
+    }
+
+    public OrderData getData() {
+        return data;
+    }
+
+    public void setData(OrderData data) {
+        this.data = data;
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getFname() {
         return fname;

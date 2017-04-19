@@ -1,13 +1,14 @@
 package com.dreamteam.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Insurance type
  */
 @Entity
-public class InsuranceType {
+public class InsuranceType implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

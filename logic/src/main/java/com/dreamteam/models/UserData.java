@@ -1,7 +1,12 @@
 package com.dreamteam.models;
 
 
-public class UserData {
+import java.io.Serializable;
+
+/**
+ * Данные пользователя и его статистика
+ */
+public class UserData implements Serializable {
 
     private String fname;
     private String sname;

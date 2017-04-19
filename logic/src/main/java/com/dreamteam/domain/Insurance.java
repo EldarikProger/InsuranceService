@@ -1,13 +1,14 @@
 package com.dreamteam.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Insurance
  */
 @Entity
-public class Insurance {
+public class Insurance implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,6 +32,10 @@ public class Insurance {
     private boolean flagg;
     @OneToOne
     private Price price;
+
+
+    public Insurance() {
+    }
 
     public boolean isFlagg() {
         return flagg;

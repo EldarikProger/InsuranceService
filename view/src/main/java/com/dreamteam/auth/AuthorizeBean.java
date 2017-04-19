@@ -1,7 +1,9 @@
 package com.dreamteam.auth;
 
+import com.dreamteam.controllers.InsurerDataManager;
 import com.dreamteam.domain.Admin;
 import com.dreamteam.domain.Insurer;
+import com.dreamteam.models.UserData;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.ejb.EJB;
@@ -20,6 +22,13 @@ public class AuthorizeBean implements Serializable{
     private boolean auth;
     private Insurer insurer;
     private Admin admin;
+
+    private UserData userData;
+    @EJB
+    private InsurerDataManager dataManager;
+
+    public AuthorizeBean() {
+    }
 
     @EJB
     private AuthorizeManager authorizeManager;
@@ -64,6 +73,18 @@ public class AuthorizeBean implements Serializable{
         this.admin = admin;
     }
 
+    public UserData getUserData() {
+        return userData;
+    }
+
+    public void setUserData(UserData userData) {
+        this.userData = userData;
+    }
+
+    public void updateData(){
+        userData = dataManager.getInsurerData(insurer);
+    }
+
     public void doAuthorize(){
         if(StringUtils.isEmpty(login) || StringUtils.isEmpty(password)){
             return;
@@ -79,7 +100,7 @@ public class AuthorizeBean implements Serializable{
         admin = authorizeManager.authorizeAdmin(login,password);
         if (admin != null){
             try {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("/view/user/profile.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/view/admin/profile.xhtml");
             } catch (IOException e) {
                 e.printStackTrace();
             }

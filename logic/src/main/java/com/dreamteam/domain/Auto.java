@@ -1,6 +1,7 @@
 package com.dreamteam.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  * Auto. Client car.
  */
 @Entity
-public class Auto {
+public class Auto implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,9 +25,8 @@ public class Auto {
     @OneToMany(mappedBy = "auto")
     private List<Insurance> insuranceList;
 
-    public Auto(long id, String fName, String sName,
+    public Auto(String fName, String sName,
                 String carVin, String carNumber, String ptsSeries, String ptsNumber, int power, Date bDay) {
-        this.id = id;
         this.fName = fName;
         this.sName = sName;
         this.carVin = carVin;

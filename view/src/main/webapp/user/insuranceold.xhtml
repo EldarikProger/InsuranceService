@@ -5,7 +5,6 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
 <h:head>
@@ -18,7 +17,7 @@
 <h:body>
 
     <header>
-        <h:graphicImage id="logo" value="resources/css/logo3.png" />
+        <h:graphicImage id="logo" value="resources/css/logo3.png"/>
         <div id="logname">
             Сервис Страховок ОСАГО / КАСКО
         </div>
@@ -32,42 +31,40 @@
                 <li><h:link value="Затраховать новых клиентов" outcome="/user/newinsurance.xhtml"/></li>
                 <li><h:link value="Затраховать старых клиентов" outcome="/user/insuranceold.xhtml"/></li>
                 <li><h:link value="Недооформленная страховка" outcome="/user/insuranceold.xhtml"/></li>
-                <li><h:link value="Выход" outcome=""/></li>
+                <li><h:link value="Выход" outcome="/index.xhtml"/></li>
             </ul>
         </nav>
     </div>
 
-    <h:form>
-        <div>
-            <p id="instruc">
-
-            </p>
-            <p id="userdata">
-                Имя:
-            </p>
-            <p id="userdata">
-                <h:inputText id="name" a:placeholder="Василий" value="#{insuranceBean.sname}"/>
-            </p>
-            <p id="userdata">
-                Фамилия:
-            </p>
-            <p id="userdata">
-                <h:inputText id="fname" a:placeholder="Иванов" value="#{insuranceBean.fname}"/>
-            </p>
-            <p id="userdata">
-                Отчество:
-            </p>
-            <p id="userdata">
-                <h:inputText id="mname" a:placeholder="Иванов" value="#{insuranceBean.mname}"/>
-            </p>
-            <p id="userdata">
-                <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
-                                 value="Зарегистрировать" onclick="return validateForm()"
-                                 action="#{insuranceBean.doOldInsurance()}" type="submit"/>
-            </p>
-        </div>
-    </h:form>
-
+    <div id="description">
+        <h:form>
+            <div>
+                <p id="userdata">
+                    Имя:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="name" a:placeholder="Василий" value="#{insuranceBean.sname}"/>
+                </p>
+                <p id="userdata">
+                    Фамилия:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="fname" a:placeholder="Иванов" value="#{insuranceBean.fname}"/>
+                </p>
+                <p id="userdata">
+                    Отчество:
+                </p>
+                <p id="userdata">
+                    <h:inputText id="mname" a:placeholder="Иванов" value="#{insuranceBean.mname}"/>
+                </p>
+                <p id="userdata">
+                    <h:commandButton styleClass="userdatabut" id="button" name="buttonLogOut"
+                                     value="Зарегистрировать" onclick="return validateForm()"
+                                     action="#{insuranceBean.doOldInsurance()}" type="submit"/>
+                </p>
+            </div>
+        </h:form>
+    </div>
 
     <script type="text/javascript">
         function validateForm() {
@@ -91,7 +88,7 @@
             }
             input = document.getElementById("login");
             var login = input.value;
-            if (login == "" || login==null) {
+            if (login == "" || login == null) {
                 input.setCustomValidity("Строка не должна быть пустой!");
                 return false
             }

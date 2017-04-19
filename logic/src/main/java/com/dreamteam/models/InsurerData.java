@@ -1,7 +1,11 @@
 package com.dreamteam.models;
 
+import java.io.Serializable;
 
-public class InsurerData {
+/**
+ * Данные страховщика
+ */
+public class InsurerData implements Serializable{
 
     private String fname;
     private String mname;
