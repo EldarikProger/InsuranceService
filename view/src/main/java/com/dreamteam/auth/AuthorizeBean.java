@@ -85,12 +85,26 @@ public class AuthorizeBean implements Serializable{
         userData = dataManager.getInsurerData(insurer);
     }
 
+    public void exit(){
+        auth = false;
+        admin = null;
+        insurer = null;
+        login = null;
+        password = null;
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/index.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void doAuthorize(){
         if(StringUtils.isEmpty(login) || StringUtils.isEmpty(password)){
             return;
         }
         insurer = authorizeManager.authorizeInsurer(login,password);
         if(insurer != null){
+            auth = true;
             try {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/view/user/profile.xhtml");
             } catch (IOException e) {
@@ -99,6 +113,7 @@ public class AuthorizeBean implements Serializable{
         }
         admin = authorizeManager.authorizeAdmin(login,password);
         if (admin != null){
+            auth = true;
             try {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("/view/admin/profile.xhtml");
             } catch (IOException e) {
