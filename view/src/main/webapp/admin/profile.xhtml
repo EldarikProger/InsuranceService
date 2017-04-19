@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+
+<h:head>
+    <title>Регистрация</title>
+    <h:outputStylesheet library="css" name="main.css"/>
+    <h:outputStylesheet library="css" name="profile.css"/>
+    <h:outputStylesheet library="css" name="myprofile.css"/>
+</h:head>
+
+<h:body>
+
+    <header>
+        <h:graphicImage id="logo" value="/resources/css/logo3.png"/>
+        <div id="logname">
+            Сервис Страховок ОСАГО / КАСКО
+        </div>
+    </header>
+
+    <div id="navigation">
+        <nav>
+            <ul>
+                <li><h:link value="Мой профиль" outcome="/admin/profile.xhtml"/></li>
+                <li><h:link value="Выход" outcome="/index.xhtml"/></li>
+            </ul>
+        </nav>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <div id="userd">
+        <h:form>
+            <p id="instruc">
+
+            </p>
+            <p>
+                <h:outputText value="Фамилия:  #{adminBean.authorizeBean.admin.fName}"/>
+            </p>
+            <p>
+                <h:outputText value="Имя:  #{adminBean.authorizeBean.admin.sName}"/>
+            </p>
+            <p>
+                <h:outputText value="Отчество:  #{adminBean.authorizeBean.admin.mName}"/>
+            </p>
+
+            <p id="instruc">
+
+            </p>
+            <p id="instruc">
+
+            </p>
+
+            <p id="userdata">
+                Данные по страховкам
+            </p>
+            <p id="userdata">
+                <h:selectOneMenu value="#{userData.data}">
+                    <f:selectItem itemValue="1" itemLabel="По страховщику"/>
+                    <f:selectItem itemValue="2" itemLabel="По клиенту"/>
+                    <f:selectItem itemValue="2" itemLabel="Все страховки"/>
+                    <f:selectItem itemValue="2" itemLabel="Только каско"/>
+                    <f:selectItem itemValue="2" itemLabel="Только осаго"/>
+                </h:selectOneMenu>
+            </p>
+            <p id="userdata">
+                <h:inputText id="name" a:placeholder="" value="#{adminBean.value}"/>
+            </p>
+        </h:form>
+    </div>
+
+    <div class="myprofile">
+    </div>
+</h:body>
+
+</html>

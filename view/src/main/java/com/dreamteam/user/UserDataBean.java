@@ -21,6 +21,14 @@ public class UserDataBean implements Serializable{
     @Inject
     private AuthorizeBean authorizeBean;
 
+    public AuthorizeBean getAuthorizeBean() {
+        return authorizeBean;
+    }
+
+    public void setAuthorizeBean(AuthorizeBean authorizeBean) {
+        this.authorizeBean = authorizeBean;
+    }
+
     public UserData getUserData() {
         return userData;
     }

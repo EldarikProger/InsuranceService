@@ -32,7 +32,7 @@ public class InsurerDataManager {
             userData.setCount(list.size());
             int k = 0;
             for (Insurance insurance : list){
-                if(insurance.getCheck())
+                if(insurance.isFlagg())
                     k++;
             }
             userData.setCountIssued(k);

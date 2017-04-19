@@ -28,16 +28,16 @@ public class Insurance {
     private String getPerson2Prava;
     private String person3Name;
     private String getPerson3Prava;
-    private Boolean check;
+    private boolean flagg;
     @OneToOne
     private Price price;
 
-    public Boolean getCheck() {
-        return check;
+    public boolean isFlagg() {
+        return flagg;
     }
 
-    public void setCheck(Boolean check) {
-        this.check = check;
+    public void setFlagg(boolean flagg) {
+        this.flagg = flagg;
     }
 
     public Price getPrice() {

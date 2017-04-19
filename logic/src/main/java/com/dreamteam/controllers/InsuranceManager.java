@@ -32,4 +32,9 @@ public class InsuranceManager {
 
     }
 
+
+    public OrderData getUnformedInsurance(OrderData data){
+        return null;
+    }
+
 }

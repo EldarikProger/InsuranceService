@@ -1,21 +1,37 @@
-package com.dreamteam.models;
+package com.dreamteam.user;
+
+import com.dreamteam.auth.AuthorizeBean;
+import com.dreamteam.controllers.InsuranceManager;
+import com.dreamteam.models.OrderData;
+
+import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.io.IOException;
+import java.io.Serializable;
 
 
-import com.dreamteam.domain.Insurer;
+@Named
+@SessionScoped
+public class InsuranceBean implements Serializable{
 
-import java.util.Date;
+    @Inject
+    private AuthorizeBean authorizeBean;
+    @EJB
+    private InsuranceManager insuranceManager;
+    private OrderData data;
 
-public class OrderData {
     private String fname,sname,mname;
-    private Date bDay;
-    private Insurer insurer;
+    private int bDayy,bDaym,bDayd;
     private String carfName, carsName;
     private String carVin;
     private String carNumber;
     private String ptsSeries;
     private String ptsNumber;
     private int power;
-    private Date carbDay;
+    private int carbDay;
     private int typeInsurance;
     private String person1Name;
     private String getPerson1Prava;
@@ -23,41 +39,23 @@ public class OrderData {
     private String getPerson2Prava;
     private String person3Name;
     private String getPerson3Prava;
-    private Date beginDate;
-    private Date endDate;
+    private int beginDatey,beginDatem,beginDated;
+    private int endDatey,endDatem,endDated;
 
-    public OrderData(String fname, String sname, String mname) {
-        this.fname = fname;
-        this.sname = sname;
-        this.mname = mname;
+    public void doNewInsurance(){
+
     }
 
-    public OrderData() {
+    public void doOldInsurance(){
+        data = new OrderData(fname,sname,mname);
+        data = insuranceManager.getUnformedInsurance(data);
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/user/newinsurance.xhtml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public OrderData(String fname, String sname, String mname, Insurer insurer, String carfName, String carsName,
-                     String carVin, String carNumber, String ptsSeries, String ptsNumber, int power, int typeInsurance,
-                     String person1Name, String getPerson1Prava, String person2Name, String getPerson2Prava,
-                     String person3Name, String getPerson3Prava) {
-        this.fname = fname;
-        this.sname = sname;
-        this.mname = mname;
-        this.insurer = insurer;
-        this.carfName = carfName;
-        this.carsName = carsName;
-        this.carVin = carVin;
-        this.carNumber = carNumber;
-        this.ptsSeries = ptsSeries;
-        this.ptsNumber = ptsNumber;
-        this.power = power;
-        this.typeInsurance = typeInsurance;
-        this.person1Name = person1Name;
-        this.getPerson1Prava = getPerson1Prava;
-        this.person2Name = person2Name;
-        this.getPerson2Prava = getPerson2Prava;
-        this.person3Name = person3Name;
-        this.getPerson3Prava = getPerson3Prava;
-    }
 
     public String getFname() {
         return fname;
@@ -83,20 +81,28 @@ public class OrderData {
         this.mname = mname;
     }
 
-    public Date getbDay() {
-        return bDay;
+    public int getbDayy() {
+        return bDayy;
     }
 
-    public void setbDay(int y,int m,int d) {
-        this.bDay = new Date(y,m,d);
+    public void setbDayy(int bDayy) {
+        this.bDayy = bDayy;
     }
 
-    public Insurer getInsurer() {
-        return insurer;
+    public int getbDaym() {
+        return bDaym;
     }
 
-    public void setInsurer(Insurer insurer) {
-        this.insurer = insurer;
+    public void setbDaym(int bDaym) {
+        this.bDaym = bDaym;
+    }
+
+    public int getbDayd() {
+        return bDayd;
+    }
+
+    public void setbDayd(int bDayd) {
+        this.bDayd = bDayd;
     }
 
     public String getCarfName() {
@@ -155,12 +161,12 @@ public class OrderData {
         this.power = power;
     }
 
-    public Date getCarbDay() {
+    public int getCarbDay() {
         return carbDay;
     }
 
-    public void setCarbDay(int y,int m,int d) {
-        this.carbDay = new Date(y,m,d);
+    public void setCarbDay(int carbDay) {
+        this.carbDay = carbDay;
     }
 
     public int getTypeInsurance() {
@@ -219,19 +225,51 @@ public class OrderData {
         this.getPerson3Prava = getPerson3Prava;
     }
 
-    public Date getBeginDate() {
-        return beginDate;
+    public int getBeginDatey() {
+        return beginDatey;
     }
 
-    public void setBeginDate(int y,int m,int d) {
-        this.beginDate = new Date(y,m,d);
+    public void setBeginDatey(int beginDatey) {
+        this.beginDatey = beginDatey;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public int getBeginDatem() {
+        return beginDatem;
     }
 
-    public void setEndDate(int y,int m,int d) {
-        this.endDate = new Date(y,m,d);
+    public void setBeginDatem(int beginDatem) {
+        this.beginDatem = beginDatem;
+    }
+
+    public int getBeginDated() {
+        return beginDated;
+    }
+
+    public void setBeginDated(int beginDated) {
+        this.beginDated = beginDated;
+    }
+
+    public int getEndDatey() {
+        return endDatey;
+    }
+
+    public void setEndDatey(int endDatey) {
+        this.endDatey = endDatey;
+    }
+
+    public int getEndDatem() {
+        return endDatem;
+    }
+
+    public void setEndDatem(int endDatem) {
+        this.endDatem = endDatem;
+    }
+
+    public int getEndDated() {
+        return endDated;
+    }
+
+    public void setEndDated(int endDated) {
+        this.endDated = endDated;
     }
 }
